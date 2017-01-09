@@ -25,7 +25,6 @@
     name: "{{item}}"
     state: present
   with_items:
-    - "acl"
     - "postgresql-{{version}}"
     - "postgresql-client-{{version}}"
     - "postgresql-contrib-{{version}}"
@@ -35,12 +34,4 @@
     name: "python-psycopg2"
     state: present
     cache_valid_time: "{{apt_cache_valid_time | default (3600)}}"
-  when: pg_users or pg_databases
-
-- name: Configure ACL
-  acl:
-    name: '/tmp'
-    entity: postgres
-    etype: user
-    permissions: r
   when: pg_users or pg_databases
