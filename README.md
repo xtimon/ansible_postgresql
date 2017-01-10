@@ -8,7 +8,7 @@ Example of the role of inclusion:
   become: yes
   become_method: sudo
   roles:
-    - role: postgresql
+    - role: xtimon.postgresql
       pg_users:
         - name: 'test1'
         - name: 'test2'
