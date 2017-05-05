@@ -10,7 +10,7 @@
     state: present
 
 - name: Add PostgreSQL repository
-  postgres_apt_repository:
+  apt_repository:
     repo: "{{ postgres_apt_repository }}"
     state: present
   register: pg_repo
