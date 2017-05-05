@@ -11,9 +11,9 @@
 - include: user.yml
   tags:
     - postgresql-user
-  when: pg_users
+  when: postgres_users
 
 - include: database.yml
   tags:
     - postgresql-database
-  when: pg_databases
+  when: postgres_databases

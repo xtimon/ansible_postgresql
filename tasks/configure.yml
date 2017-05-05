@@ -2,14 +2,14 @@
   lineinfile:
     line: "{{ item.name }} = '{{ item.value }}'"
     state: "{{ item.state|default('present') }}"
-    dest: "/etc/postgresql/{{version}}/main/postgresql.conf"
+    dest: "/etc/postgresql/{{ postgres_version }}/main/postgresql.conf"
   notify: restart postgres
-  with_items: "{{ pg_settings }}"
+  with_items: "{{ postgres_settings }}"
 
 - name: Configuration pg_hba
   lineinfile:
     line: "{{ item.value }}"
     state: "{{ item.state|default('present') }}"
-    dest: "/etc/postgresql/{{ version }}/main/pg_hba.conf"
+    dest: "/etc/postgresql/{{ postgres_version }}/main/pg_hba.conf"
   notify: reload postgres
-  with_items: "{{ pg_hba_settings }}"
+  with_items: "{{ postgres_hba_settings }}"

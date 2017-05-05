@@ -5,4 +5,4 @@
     role_attr_flags: "{{ item.role_attr_flags|default('LOGIN') }}"
   become: yes
   become_user: "postgres"
-  with_items: "{{ pg_users }}"
+  with_items: "{{ postgres_users }}"
