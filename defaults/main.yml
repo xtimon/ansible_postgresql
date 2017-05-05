@@ -1,8 +1,8 @@
-version: 9.6
+postgres_version: 9.6
 
-pg_users: []
+postgres_users: []
 ## Example
-# pg_users:
+# postgres_users:
 #   - name: 'test1'
 #   - name: 'test2'
 #     pass: 'test2_password'
@@ -10,9 +10,9 @@ pg_users: []
 #     pass: 'test3_password'
 #     role_attr_flags: 'LOGIN'
 
-pg_databases: []
+postgres_databases: []
 ## Example
-# pg_databases:
+# postgres_databases:
 #   - name: 'test1'
 #   - name: 'test2'
 #     owner: 'test2'
@@ -25,15 +25,15 @@ pg_databases: []
 #       - "pg_buffercache"
 #       - "pg_stat_statements"
 
-pg_hba_settings: []
+postgres_hba_settings: []
 ## Example (default state is present)
 # pg_hba_params:
 #   - { value: 'host test1 postgres 127.0.0.1/32 md5', state: 'present'}
 #   - { value: 'host test2 test2 192.168.100.0/24 md5', state: 'absent' }   
 
-pg_settings: []
+postgres_settings: []
 ## Example (default state is present)
-# pg_settings:
+# postgres_settings:
 #   - { name: 'lc_messages', value: 'en_US.UTF-8', state: present }
 #   - { name: 'log_line_prefix', value: '%t [%p]: [%l-1] user=%u,db=%d,app=%a,client=%h ', state: absent }
 #   - { name: 'log_line_prefix', value: '%t [%p]: [%l-1] ' }
@@ -43,6 +43,6 @@ pg_settings: []
 #   - { name: 'log_lock_waits', value: 'on' }
 #   - { name: 'log_autovacuum_min_duration', value: '0' }
 
-apt_key_id: ACCC4CF8
-apt_key_url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-apt_repository: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main {{version}}'
+postgres_apt_key_id: ACCC4CF8
+postgres_apt_key_url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+postgres_apt_repository: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main {{ postgres_version }}'

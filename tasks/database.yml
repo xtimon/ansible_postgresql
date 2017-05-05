@@ -8,7 +8,7 @@
     template: 'template0'
   become: yes
   become_user: "postgres"
-  with_items: "{{ pg_databases }}"
+  with_items: "{{ postgres_databases }}"
 
 - name: Databases Extensions
   postgresql_ext:
@@ -17,7 +17,7 @@
   become: yes
   become_user: "postgres"
   with_subelements: 
-    - "{{ pg_databases }}"
+    - "{{ postgres_databases }}"
     - extensions
     - flags:
       skip_missing: True
