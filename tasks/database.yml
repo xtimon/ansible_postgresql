@@ -1,3 +1,4 @@
+---
 - name: Databases
   postgresql_db:
     name: "{{ item.name }}"
@@ -6,7 +7,7 @@
     lc_ctype: "{{ item.lc_ctype|default('en_US.UTF-8') }}"
     owner: "{{ item.owner|default('postgres') }}"
     template: 'template0'
-  become: yes
+  become: 'yes'
   become_user: "postgres"
   with_items: "{{ postgres_databases }}"
 
@@ -14,10 +15,10 @@
   postgresql_ext:
     name: "{{ item.1 }}"
     db: "{{ item.0.name }}"
-  become: yes
+  become: 'yes'
   become_user: "postgres"
-  with_subelements: 
+  with_subelements:
     - "{{ postgres_databases }}"
     - extensions
     - flags:
-      skip_missing: True
+      skip_missing: 'True'

@@ -1,8 +1,9 @@
+---
 - name: Users
   postgresql_user:
     name: "{{ item.name }}"
     password: "{{ item.pass|default(item.name) }}"
     role_attr_flags: "{{ item.role_attr_flags|default('LOGIN') }}"
-  become: yes
+  become: 'yes'
   become_user: "postgres"
   with_items: "{{ postgres_users }}"

@@ -1,3 +1,4 @@
+---
 - name: restart postgres
   service:
     name: "postgresql"
@@ -7,3 +8,7 @@
   service:
     name: "postgresql"
     state: reloaded
+
+- name: update apt cache
+  apt:
+    update_cache: 'yes'

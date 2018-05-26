@@ -1,3 +1,4 @@
+---
 - name: Check CA certificates
   apt:
     pkg: ca-certificates
@@ -13,12 +14,9 @@
   apt_repository:
     repo: "{{ postgres_apt_repository }}"
     state: present
-  register: pg_repo
+  notify: update apt cache
 
-- name: Updating apt cache
-  apt:
-    update_cache: yes
-  when: pg_repo.changed
+- meta: flush_handlers
 
 - name: Install PostgreSQL
   apt:

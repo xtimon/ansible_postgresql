@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Timur Isanov
   description: Simple PostgreSQL role
@@ -10,17 +11,17 @@ galaxy_info:
   github_branch: master
 
   platforms:
-  - name: Ubuntu
-    versions:
-    - precise
-    - quantal
-    - raring
-    - saucy
-    - trusty
-    - utopic
-    - vivid
-    - wily
-    - xenial
+    - name: Ubuntu
+      versions:
+        - precise
+        - quantal
+        - raring
+        - saucy
+        - trusty
+        - utopic
+        - vivid
+        - wily
+        - xenial
 
   galaxy_tags: [postgresql]
 

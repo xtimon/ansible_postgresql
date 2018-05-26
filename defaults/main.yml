@@ -1,3 +1,4 @@
+---
 postgres_version: 9.6
 
 postgres_users: []
@@ -21,7 +22,7 @@ postgres_databases: []
 #     lc_collate: 'en_US.UTF-8'
 #     lc_ctype: 'en_US.UTF-8'
 #     owner: 'test3'
-#     extensions: 
+#     extensions:
 #       - "pg_buffercache"
 #       - "pg_stat_statements"
 
@@ -29,7 +30,7 @@ postgres_hba_settings: []
 ## Example (default state is present)
 # pg_hba_params:
 #   - { value: 'host test1 postgres 127.0.0.1/32 md5', state: 'present'}
-#   - { value: 'host test2 test2 192.168.100.0/24 md5', state: 'absent' }   
+#   - { value: 'host test2 test2 192.168.100.0/24 md5', state: 'absent' }
 
 postgres_settings: []
 ## Example (default state is present)
