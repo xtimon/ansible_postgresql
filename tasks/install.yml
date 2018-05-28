@@ -29,7 +29,7 @@
 
 - name: Install psycopg2
   apt:
-    name: "python-psycopg2"
+    name: "python3-psycopg2"
     state: present
     cache_valid_time: "{{apt_cache_valid_time | default (3600)}}"
   when: postgres_users or postgres_databases

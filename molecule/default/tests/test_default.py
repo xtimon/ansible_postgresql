@@ -19,7 +19,7 @@ def test_postgres_packages(host):
 
 
 def test_psycopg2_package(host):
-    package = host.package("python-psycopg2")
+    package = host.package("python3-psycopg2")
     assert package.is_installed
 
 
